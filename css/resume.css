@@ -1,0 +1,716 @@
+/* ============================================
+   RESUME SECTION - SMALL PAPER CLIP, CENTERED
+   ============================================ */
+
+/* ===== RESUME CARD ===== */
+.resume-card {
+    background-color: var(--color-teal);
+    position: relative;
+    overflow: hidden;
+    border: var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.resume-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ===== RESUME CONTENT - CENTERED ===== */
+.resume-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: var(--space-md);
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+}
+
+/* ===== RESUME LABEL ===== */
+.resume-label {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    background: var(--color-navy);
+    border: 2px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    z-index: 10;
+    animation: labelSlideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) both;
+}
+
+@keyframes labelSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px) rotate(-10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+    }
+}
+
+.label-text {
+    color: var(--color-yellow);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== DOCUMENT STACK WRAPPER - CENTERED ===== */
+.document-stack-wrapper {
+    position: relative;
+    width: 160px;
+    height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1500px;
+}
+
+/* ===== DOCUMENT STACK ===== */
+.document-stack {
+    position: absolute;
+    width: 160px;
+    height: 210px;
+    perspective: 1200px;
+    animation: stackSlideIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s backwards;
+}
+
+@keyframes stackSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== PAGE STYLES ===== */
+.page {
+    position: absolute;
+    width: 160px;
+    height: 210px;
+    background: #ffffff;
+    border: 2px solid var(--color-border);
+    border-radius: 0.25rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: all var(--transition-base) var(--easing-default);
+    overflow: hidden;
+}
+
+/* Page 1 - Back */
+.page-1 {
+    transform: translateY(16px) translateX(-8px) rotate(12deg) skewY(2deg);
+    z-index: 1;
+    background: #f5f5f5;
+}
+
+/* Page 2 - Middle */
+.page-2 {
+    transform: translateY(8px) rotate(-6deg) skewY(-1deg);
+    z-index: 2;
+    background: #fafafa;
+}
+
+/* Page 3 - Front */
+.page-3 {
+    z-index: 3;
+    background: #fff;
+    transform: translateY(0) rotate(0deg);
+    position: relative;
+}
+
+/* ===== RESUME HEADER ===== */
+.resume-header {
+    padding: 0.8rem 0.8rem 0.4rem 0.8rem;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+.header-line {
+    background: #1e293b;
+    border-radius: 1px;
+    margin-bottom: 0.3rem;
+}
+
+.header-large {
+    height: 3px;
+    width: 70%;
+}
+
+.header-small {
+    height: 2px;
+    width: 50%;
+    background: #64748b;
+}
+
+/* ===== PAGE CONTENT ===== */
+.page-content {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.resume-style {
+    padding: 0.7rem;
+    gap: 0.5rem;
+}
+
+/* ===== RESUME SECTIONS ===== */
+.resume-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.section-title {
+    height: 2px;
+    background: #1e293b;
+    width: 80%;
+    margin-bottom: 0.2rem;
+}
+
+.section-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.line-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.line-main {
+    height: 1.5px;
+    background: linear-gradient(90deg, #334155 0%, #334155 90%, transparent 100%);
+    border-radius: 0.5px;
+}
+
+.line-sub {
+    height: 1px;
+    background: linear-gradient(90deg, #cbd5e1 0%, #cbd5e1 70%, transparent 100%);
+    border-radius: 0.5px;
+    width: 85%;
+}
+
+/* ===== ACCENT BLOCKS ===== */
+.accent-blocks {
+    display: flex;
+    gap: 0.4rem;
+    margin-top: auto;
+}
+
+.accent-box {
+    flex: 1;
+    height: 1.2rem;
+    border-radius: 0.15rem;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.accent-orange {
+    background: linear-gradient(135deg, #ff9500 0%, #f59e0b 100%);
+}
+
+.accent-dark {
+    background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+}
+
+/* ===== BOOKMARK/FLAG ===== */
+.bookmark {
+    position: absolute;
+    right: -1px;
+    top: 1.5rem;
+    width: 1.2rem;
+    height: 1.8rem;
+    background: linear-gradient(135deg, #ff9500 0%, #f59e0b 100%);
+    border: 2px solid var(--color-border);
+    border-left: none;
+    border-radius: 0 0.25rem 0.25rem 0;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.15);
+    animation: bookmarkPulse 2s ease-in-out infinite 0.5s;
+    z-index: 4;
+}
+
+@keyframes bookmarkPulse {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.05);
+    }
+}
+
+/* ===== 3D PAPER CLIP - SMALL & CENTERED ===== */
+.paperclip-3d {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 12;
+    animation: clipGrabIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s backwards;
+}
+
+@keyframes clipGrabIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -50%) translateX(30px) rotate(-30deg) scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+}
+
+/* ===== PAPER CLIP STRUCTURE - COMPACT ===== */
+.paperclip-wrap {
+    position: relative;
+    width: 50px;
+    height: 65px;
+    animation: clipWiggle 3s ease-in-out infinite 1.3s;
+}
+
+@keyframes clipWiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(-0.8deg);
+    }
+    75% {
+        transform: rotate(0.8deg);
+    }
+}
+
+.bar {
+    position: absolute;
+    background-color: #64748b;
+    height: 2px;
+    border-radius: 1px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.bar-1 {
+    width: 42px;
+    top: 0;
+    left: 0;
+}
+
+.bar-2 {
+    top: 5px;
+    left: 10px;
+    width: 28px;
+}
+
+.bar-3 {
+    top: 18px;
+    left: 0;
+    width: 36px;
+}
+
+.bar-4 {
+    top: 23px;
+    left: 14px;
+    width: 32px;
+}
+
+.curve {
+    position: absolute;
+    border: solid #64748b;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.curve-1 {
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    top: 0;
+    border-width: 2px;
+    border-radius: 12px;
+}
+
+.curve-2 {
+    width: 16px;
+    height: 16px;
+    top: 5px;
+    left: 22px;
+    border-width: 2px;
+    border-radius: 10px;
+}
+
+.curve-3 {
+    width: 22px;
+    height: 22px;
+    top: 0;
+    left: 43px;
+    border-width: 2px;
+    border-radius: 13px;
+    z-index: -1;
+}
+
+.curve-block {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.curve-block-1 {
+    width: 12px;
+    height: 16px;
+    top: 3px;
+    left: -7px;
+}
+
+.curve-block-2 {
+    width: 10px;
+    height: 12px;
+    top: 7px;
+    left: 24px;
+}
+
+.curve-block-3 {
+    width: 12px;
+    height: 18px;
+    top: 2px;
+    left: 45px;
+    z-index: -1;
+}
+
+/* ===== HOVER EFFECTS ===== */
+.document-stack:hover .page-1 {
+    transform: translateY(24px) translateX(-12px) rotate(16deg) skewY(3deg);
+}
+
+.document-stack:hover .page-2 {
+    transform: translateY(12px) rotate(-8deg) skewY(-2deg);
+}
+
+.document-stack:hover .page-3 {
+    transform: translateY(-4px) scale(1.02) rotate(1deg);
+}
+
+.document-stack-wrapper:hover .paperclip-3d {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* ===== ACCESSIBILITY ===== */
+.resume-card:focus-within {
+    outline: 3px solid var(--color-navy);
+    outline-offset: -3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .paperclip-3d,
+    .resume-label,
+    .document-stack,
+    .bookmark {
+        animation: none;
+    }
+
+    .document-stack:hover .page-1,
+    .document-stack:hover .page-2,
+    .document-stack:hover .page-3 {
+        transform: none;
+    }
+
+    .document-stack-wrapper:hover .paperclip-3d {
+        filter: none;
+    }
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Large Desktop: 1440px+ */
+@media (min-width: 1440px) {
+    .resume-content {
+        gap: 0;
+        padding: var(--space-lg);
+    }
+
+    .document-stack {
+        width: 180px;
+        height: 240px;
+    }
+
+    .page {
+        width: 180px;
+        height: 240px;
+    }
+
+    .document-stack-wrapper {
+        width: 180px;
+        height: 240px;
+    }
+
+    .label-text {
+        font-size: 1.3rem;
+    }
+
+    .paperclip-wrap {
+        width: 60px;
+        height: 80px;
+    }
+
+    .bar { height: 2.5px; }
+    .bar-1 { width: 50px; }
+    .bar-2 { top: 6px; left: 12px; width: 34px; }
+    .bar-3 { top: 22px; width: 44px; }
+    .bar-4 { top: 28px; left: 17px; width: 38px; }
+
+    .curve-1 { width: 26px; height: 26px; left: -13px; border-radius: 15px; }
+    .curve-2 { width: 20px; height: 20px; top: 6px; left: 27px; border-radius: 12px; }
+    .curve-3 { width: 28px; height: 28px; left: 52px; border-radius: 16px; }
+
+    .curve-block-1 { width: 16px; height: 20px; }
+    .curve-block-2 { width: 12px; height: 15px; left: 29px; }
+    .curve-block-3 { width: 16px; height: 22px; left: 54px; }
+}
+
+/* Tablet Landscape: 1024px - 1439px */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    .resume-content {
+        gap: 0;
+        padding: var(--space-md);
+    }
+
+    .document-stack {
+        width: 170px;
+        height: 225px;
+    }
+
+    .page {
+        width: 170px;
+        height: 225px;
+    }
+
+    .document-stack-wrapper {
+        width: 170px;
+        height: 225px;
+    }
+
+    .label-text {
+        font-size: 1.1rem;
+    }
+
+    .paperclip-wrap {
+        width: 55px;
+        height: 72px;
+    }
+
+    .bar { height: 2px; }
+}
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) {
+    .resume-content {
+        gap: 0;
+        padding: var(--space-md);
+    }
+
+    .document-stack {
+        width: 150px;
+        height: 200px;
+    }
+
+    .page {
+        width: 150px;
+        height: 200px;
+    }
+
+    .document-stack-wrapper {
+        width: 150px;
+        height: 200px;
+    }
+
+    .label-text {
+        font-size: 1rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .paperclip-wrap {
+        width: 48px;
+        height: 62px;
+    }
+
+    .bar { height: 1.8px; }
+    .bar-1 { width: 38px; }
+    .bar-2 { top: 4px; left: 9px; width: 25px; }
+    .bar-3 { top: 16px; width: 32px; }
+    .bar-4 { top: 20px; left: 12px; width: 28px; }
+
+    .curve-1 { width: 18px; height: 18px; left: -9px; border-width: 1.5px; border-radius: 10px; }
+    .curve-2 { width: 14px; height: 14px; top: 4px; left: 20px; border-width: 1.5px; }
+    .curve-3 { width: 20px; height: 20px; left: 38px; border-width: 1.5px; }
+
+    .resume-label {
+        left: 1rem;
+    }
+}
+
+/* Mobile: 480px - 767px */
+@media (max-width: 767px) {
+    .resume-content {
+        gap: 0;
+        padding: var(--space-sm);
+        justify-content: center;
+    }
+
+    .document-stack {
+        width: 130px;
+        height: 175px;
+    }
+
+    .page {
+        width: 130px;
+        height: 175px;
+    }
+
+    .document-stack-wrapper {
+        width: 130px;
+        height: 175px;
+    }
+
+    .label-text {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .paperclip-wrap {
+        width: 42px;
+        height: 54px;
+    }
+
+    .bar { height: 1.5px; }
+    .bar-1 { width: 32px; }
+    .bar-2 { top: 3px; left: 7px; width: 21px; }
+    .bar-3 { top: 13px; width: 27px; }
+    .bar-4 { top: 16px; left: 10px; width: 23px; }
+
+    .resume-label {
+        left: 0.75rem;
+    }
+
+    .bookmark {
+        width: 0.9rem;
+        height: 1.5rem;
+        top: 1.2rem;
+    }
+}
+
+/* Small Mobile: max-width 479px */
+@media (max-width: 479px) {
+    .resume-content {
+        gap: 0;
+        padding: 0.5rem;
+    }
+
+    .document-stack {
+        width: 110px;
+        height: 150px;
+    }
+
+    .page {
+        width: 110px;
+        height: 150px;
+    }
+
+    .document-stack-wrapper {
+        width: 110px;
+        height: 150px;
+    }
+
+    .label-text {
+        font-size: 0.85rem;
+        padding: 0.25rem 0.5rem;
+    }
+
+    .paperclip-wrap {
+        width: 36px;
+        height: 48px;
+    }
+
+    .bar { height: 1.3px; }
+    .bar-1 { width: 28px; }
+    .bar-2 { top: 2.5px; left: 6px; width: 18px; }
+    .bar-3 { top: 11px; width: 24px; }
+    .bar-4 { top: 14px; left: 8px; width: 20px; }
+
+    .resume-label {
+        left: 0.5rem;
+    }
+
+    .bookmark {
+        width: 0.8rem;
+        height: 1.2rem;
+    }
+}
+
+/* Very Small: max-width 360px */
+@media (max-width: 360px) {
+    .resume-content {
+        gap: 0;
+        padding: 0.4rem;
+    }
+
+    .document-stack {
+        width: 95px;
+        height: 130px;
+    }
+
+    .page {
+        width: 95px;
+        height: 130px;
+        border-width: 1px;
+    }
+
+    .document-stack-wrapper {
+        width: 95px;
+        height: 130px;
+    }
+
+    .label-text {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .paperclip-wrap {
+        width: 30px;
+        height: 40px;
+    }
+
+    .bar { height: 1px; }
+    .bar-1 { width: 24px; }
+    .bar-2 { top: 2px; left: 5px; width: 15px; }
+    .bar-3 { top: 9px; width: 20px; }
+    .bar-4 { top: 12px; left: 7px; width: 17px; }
+
+    .resume-label {
+        left: 0.3rem;
+    }
+
+    .bookmark {
+        width: 0.7rem;
+        height: 1rem;
+    }
+}
