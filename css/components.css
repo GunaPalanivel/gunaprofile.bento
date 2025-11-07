@@ -1,0 +1,77 @@
+/* Reusable Component Styles */
+
+/* Base Card Component */
+.bento-grid > section {
+    position: relative;
+    border: var(--border);
+    overflow: hidden;
+    transition: transform var(--transition-base) var(--easing-default);
+}
+
+/* Card Hover Effect */
+.bento-grid > section:hover {
+    transform: translateY(-2px);
+}
+
+/* Card Content Containers */
+.hero-content,
+.work-content,
+.projects-content,
+.education-content,
+.contact-content,
+.blog-content,
+.resume-content,
+.misc-content {
+    width: 100%;
+    height: 100%;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section Background Colors */
+.hero-card {
+    background-color: var(--color-yellow);
+}
+
+.work-card {
+    background-color: var(--color-orange);
+}
+
+.projects-card {
+    background-color: var(--color-teal);
+}
+
+.education-card {
+    background-color: var(--color-blue-light);
+}
+
+.contact-card {
+    background-color: var(--color-blue-pale);
+}
+
+.blog-card {
+    background-color: var(--color-teal);
+}
+
+.resume-card {
+    background-color: var(--color-teal);
+}
+
+.misc-card {
+    background-color: var(--color-orange);
+}
+
+/* Card Header Badge Component */
+.card-header-badge {
+    position: absolute;
+    top: var(--space-md);
+    left: var(--space-md);
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-navy);
+    color: var(--color-text-secondary);
+    border: var(--border);
+    font-weight: 700;
+    font-size: 1.125rem;
+    z-index: 10;
+}
