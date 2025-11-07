@@ -1,0 +1,77 @@
+/* Work Experience Section */
+
+/* Work Card Container */
+.work-card {
+  background-color: var(--color-orange);
+  position: relative;
+  overflow: visible;
+}
+
+.work-content {
+  width: 100%;
+  height: 100%;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+/* Card Header */
+.card-header {
+  margin-bottom: var(--space-md);
+}
+
+.card-header h2 {
+  background-color: var(--color-navy);
+  color: var(--color-text-secondary);
+  border: var(--border);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 1.5rem;
+  font-weight: 700;
+  width: fit-content;
+  margin: 0;
+  letter-spacing: 0.05em;
+}
+
+/* Grid Pattern Container */
+.work-grid-pattern {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  flex: 1;
+  align-content: start;
+  margin-bottom: var(--space-md);
+}
+
+/* Grid Square Elements */
+.grid-square {
+  aspect-ratio: 1;
+  background-color: var(--color-teal);
+  border: 2px solid var(--color-border);
+  border-radius: 0.25rem;
+  display: block;
+  transition: all var(--transition-base) var(--easing-default);
+  cursor: pointer;
+}
+
+.grid-square:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Decorations Container */
+.work-decorations {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.decoration {
+  position: absolute;
+  display: block;
+}
