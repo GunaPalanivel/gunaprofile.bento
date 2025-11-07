@@ -1,0 +1,41 @@
+/* CSS Custom Properties (Design Tokens) */
+
+:root {
+  /* Primary Color Palette */
+  --color-orange: #f4a261;
+  --color-teal: #2a9d8f;
+  --color-blue-light: #9ad1ea;
+  --color-blue-pale: #94d1ee;
+  --color-yellow: #e9c46a;
+  --color-navy: #264653;
+  --color-stone: #d4c5b9;
+
+  /* Semantic Colors */
+  --color-background: var(--color-stone);
+  --color-border: #000000;
+  --color-text-primary: #000000;
+  --color-text-secondary: #ffffff;
+
+  /* Border Styles */
+  --border-width: 2px;
+  --border-style: solid;
+  --border: var(--border-width) var(--border-style) var(--color-border);
+
+  /* Border Radius */
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+
+  /* Spacing Scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+
+  /* Transition Timing */
+  --transition-fast: 150ms;
+  --transition-base: 250ms;
+  --transition-slow: 400ms;
+  --easing-default: ease-in-out;
+}
