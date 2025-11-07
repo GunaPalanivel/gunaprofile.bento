@@ -1,4 +1,6 @@
-/*  ROOT VARIABLES  */
+/* 
+   ROOT VARIABLES
+    */
 :root {
   --color-yellow: #ffd60a;
   --color-navy: #001d3d;
@@ -15,7 +17,9 @@
   --border: 2px solid var(--color-navy);
 }
 
-/*  HERO SECTION STYLES  */
+/* 
+   HERO SECTION STYLES
+    */
 
 /* Hero Section Container */
 .hero-card {
@@ -44,7 +48,9 @@
   padding: var(--space-lg);
 }
 
-/*  BADGES CONTAINER  */
+/* 
+   BADGES CONTAINER
+    */
 
 .hero-badges {
   display: flex;
@@ -113,7 +119,9 @@
   letter-spacing: 0.01em;
 }
 
-/*  CURSOR ELEMENTS  */
+/* 
+   CURSOR ELEMENTS
+    */
 
 .cursor {
   display: inline-block;
@@ -143,7 +151,47 @@
   background-color: var(--color-orange);
 }
 
-/*  ANIMATIONS  */
+/* 
+   TYPEWRITER EFFECT STYLES
+    */
+
+/* Typewriter text container */
+.typewriter {
+  --char-count: 20;
+  --duration: 2s;
+  --delay: 0s;
+
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typewriter var(--duration) steps(var(--char-count), end)
+    var(--delay) forwards;
+  display: inline-block;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Typewriter animation - reveals text by expanding width */
+@keyframes typewriter {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+/* Keep cursor visible after typing completes */
+.typewriter + .cursor {
+  animation: blink 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  animation-delay: calc(var(--delay) + var(--duration));
+}
+
+/* 
+   ANIMATIONS
+    */
 
 @keyframes blink {
   0%,
@@ -178,7 +226,9 @@
   }
 }
 
-/*  ACCESSIBILITY ENHANCEMENTS  */
+/* 
+   ACCESSIBILITY ENHANCEMENTS
+    */
 
 /* Focus Styles for Keyboard Navigation */
 .name-badge:focus-within,
@@ -192,10 +242,21 @@
   .hero-card,
   .name-badge,
   .tagline-badge,
-  .cursor {
+  .cursor,
+  .typewriter {
     animation: none;
     transition: none;
     will-change: auto;
+  }
+
+  .typewriter {
+    width: 100%;
+    opacity: 1;
+  }
+
+  .typewriter + .cursor {
+    animation: none;
+    opacity: 1;
   }
 }
 
@@ -223,7 +284,11 @@
   }
 }
 
-/* Responsive Design */
+/* 
+   RESPONSIVE DESIGN
+    */
+
+/* Tablet devices (max-width: 768px) */
 @media (max-width: 768px) {
   .hero-content {
     gap: var(--space-md);
@@ -236,6 +301,52 @@
 
   .tagline-text {
     font-size: 1rem;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-1px);
+  }
+
+  .typewriter {
+    --duration: 1.5s;
+  }
+}
+
+/* Mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .hero-content {
+    gap: var(--space-md);
+    padding: var(--space-sm);
+  }
+
+  .name-text {
+    font-size: 1.5rem;
+  }
+
+  .name-badge {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .tagline-text {
+    font-size: 0.875rem;
+  }
+
+  .tagline-badge {
+    padding: var(--space-sm) var(--space-sm);
+  }
+
+  .cursor-name {
+    width: 0.35rem;
+    height: 1.5rem;
+  }
+
+  .cursor-tagline {
+    width: 0.2rem;
+    height: 0.875rem;
+  }
+
+  .typewriter {
+    --duration: 1.2s;
   }
 
   .hero-card:hover {
