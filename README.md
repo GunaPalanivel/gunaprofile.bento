@@ -74,7 +74,7 @@ Open `index.html` directly in a browser. For live reloading during development, 
 
 ## 🎯 Features
 
-### Current (Branch 1: Foundation)
+### (Branch 1: Foundation)
 
 - ✅ 9x9 CSS Grid bento layout
 - ✅ 8 section cards (Hero, Work, Projects, Education, Contact, Blog, Resume, Misc)
@@ -83,9 +83,43 @@ Open `index.html` directly in a browser. For live reloading during development, 
 - ✅ Design token system with CSS variables
 - ✅ Accessibility features (ARIA labels, keyboard focus)
 
-### Upcoming
+### 🔄 Branch 2: Hero section with animated name/tagline (`feat/hero-section`)
 
-- 🔄 Branch 2: Hero section with animated name/tagline
+The hero section showcases the developer's name and tagline with CSS-only animations.
+
+### Features
+
+- **Name Badge**: Large, prominent display with animated entry
+- **Tagline Badge**: Secondary text with staggered animation
+- **Blinking Cursor**: CSS-only cursor animation (no JavaScript)
+- **Hover Effects**: Scale and shadow effects for interactivity
+- **Accessibility**: Full keyboard support, reduced motion preference
+- **Responsive**: Scales across all device sizes (480px - 1920px)
+
+### Animation Details
+
+- **Name Entry**: slideInDown (0.6s)
+- **Tagline Entry**: slideInUp (0.6s, 0.2s delay)
+- **Cursor Blink**: 1s cycle with cubic-bezier easing
+- **Hover Scale**: 1.02x with smooth transition
+
+### Accessibility
+
+- Keyboard focus states with teal outline
+- Respects `prefers-reduced-motion` user preference
+- Supports high contrast mode (`prefers-contrast: more`)
+- Dark mode support (`prefers-color-scheme: dark`)
+- WCAG 2.1 AA compliant
+
+### Browser Support
+
+- Chrome/Edge 88+
+- Firefox 87+
+- Safari 14+
+- Mobile browsers (iOS Safari 14+, Chrome Android)
+
+## Upcoming
+
 - 🔄 Branch 3: Work experience with decorative grid pattern
 - 🔄 Branch 4: Projects showcase and education section
 - 🔄 Branch 5: Contact form, blog link, resume download, misc details
