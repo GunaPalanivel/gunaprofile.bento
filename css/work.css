@@ -1,77 +1,260 @@
-/* Work Experience Section */
+/* Work Experience Section - 4 × (5×4) Grids = 80 Squares */
 
-/* Work Card Container */
+/*  WORK CARD  */
 .work-card {
-  background-color: var(--color-orange);
-  position: relative;
-  overflow: visible;
+    background-color: var(--color-orange);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all var(--transition-base) var(--easing-default);
+    border: var(--border);
 }
 
+.work-card:hover {
+    box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.12);
+}
+
+/*  WORK CONTENT  */
 .work-content {
-  width: 100%;
-  height: 100%;
-  padding: var(--space-lg);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  z-index: 1;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-lg);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    gap: var(--space-md);
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
-/* Card Header */
+/*  CARD HEADER  */
 .card-header {
-  margin-bottom: var(--space-md);
+    width: 100%;
+    margin-bottom: 0;
+    z-index: 10;
 }
 
 .card-header h2 {
-  background-color: var(--color-navy);
-  color: var(--color-text-secondary);
-  border: var(--border);
-  padding: var(--space-sm) var(--space-md);
-  font-size: 1.5rem;
-  font-weight: 700;
-  width: fit-content;
-  margin: 0;
-  letter-spacing: 0.05em;
+    background-color: var(--color-navy);
+    color: var(--color-text-secondary);
+    border: var(--border);
+    padding: var(--space-sm) var(--space-md);
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: fit-content;
+    margin: 0;
+    letter-spacing: 0.05em;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
 }
 
-/* Grid Pattern Container */
+/*  GRID PATTERN CONTAINER  */
 .work-grid-pattern {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-  flex: 1;
-  align-content: start;
-  margin-bottom: var(--space-md);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 0.3rem;
+    width: 100%;
+    height: auto;
+    padding: var(--space-md);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px dashed var(--color-border);
+    border-radius: 0.5rem;
+    flex: 1;
+    align-content: stretch;
+    justify-items: stretch;
+    align-items: stretch;
+    overflow: hidden;
 }
 
-/* Grid Square Elements */
+/*  WORK GRID ITEM (Each 5×4 Grid)  */
+.work-grid-item {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 0.2rem;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+}
+
+/* Staggered Pop-In for Each Grid */
+.work-grid-item[data-grid="1"] {
+    animation: popInGrid 2s ease-in-out infinite;
+}
+
+.work-grid-item[data-grid="2"] {
+    animation: popInGrid 2s ease-in-out infinite 0.5s;
+}
+
+.work-grid-item[data-grid="3"] {
+    animation: popInGrid 2s ease-in-out infinite 1s;
+}
+
+.work-grid-item[data-grid="4"] {
+    animation: popInGrid 2s ease-in-out infinite 1.5s;
+}
+
+/*  GRID SQUARES  */
 .grid-square {
-  aspect-ratio: 1;
-  background-color: var(--color-teal);
-  border: 2px solid var(--color-border);
-  border-radius: 0.25rem;
-  display: block;
-  transition: all var(--transition-base) var(--easing-default);
-  cursor: pointer;
+    aspect-ratio: 1;
+    border: 1px solid var(--color-border);
+    border-radius: 0.1rem;
+    display: block;
+    transition: all var(--transition-base) var(--easing-default);
+    will-change: transform;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    box-sizing: border-box;
 }
 
 .grid-square:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: scale(1.08) rotate(1deg);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    filter: brightness(1.1);
+    z-index: 10;
 }
 
-/* Decorations Container */
+.grid-square:focus-visible {
+    outline: 2px solid var(--color-navy);
+    outline-offset: 1px;
+}
+
+/*  POP-IN ANIMATIONS  */
+@keyframes popInGrid {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    40% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/*  DECORATIONS CONTAINER  */
 .work-decorations {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    clip-path: inset(0);
 }
 
+/*  DECORATION BASE STYLES  */
 .decoration {
-  position: absolute;
-  display: block;
+    position: absolute;
+    display: block;
+    pointer-events: none;
+}
+
+/* Star Shape */
+.decoration-star {
+    width: 2rem;
+    height: 2rem;
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    background-color: var(--color-teal);
+    animation: float 3s ease-in-out infinite;
+    opacity: 0.8;
+}
+
+/* Circle Shape */
+.decoration-circle {
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-teal);
+    border: 2px solid var(--color-border);
+    border-radius: 50%;
+    animation: pulse 2s ease-in-out infinite;
+    opacity: 0.7;
+}
+
+/* Sparkle Shape */
+.decoration-sparkle {
+    width: 1rem;
+    height: 1rem;
+    background: linear-gradient(45deg, var(--color-teal), var(--color-navy));
+    clip-path: polygon(50% 0%, 55% 35%, 90% 35%, 60% 57%, 65% 90%, 50% 65%, 35% 90%, 40% 57%, 10% 35%, 45% 35%);
+    animation: spin 4s linear infinite;
+    opacity: 0.9;
+}
+
+/* Diamond Shape */
+.decoration-diamond {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: var(--color-teal);
+    transform: rotate(45deg);
+    border: 2px solid var(--color-border);
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.6;
+}
+
+/*  DECORATION ANIMATIONS  */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(5deg);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*  REDUCED MOTION  */
+@media (prefers-reduced-motion: reduce) {
+    .work-grid-item,
+    .decoration {
+        animation: none;
+    }
+
+    .grid-square:hover {
+        transform: none;
+    }
+}
+
+/*  PERFORMANCE  */
+.work-card {
+    contain: layout style paint;
+}
+
+.grid-square {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.work-grid-pattern {
+    content-visibility: auto;
 }
