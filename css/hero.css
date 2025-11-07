@@ -1,9 +1,18 @@
-/* Hero Section Styles -Hero Section Container */
+/* Hero Section Styles */
+
+/* Hero Section Container */
 .hero-card {
   background-color: var(--color-yellow);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform var(--transition-base) var(--easing-default),
+    box-shadow var(--transition-base) var(--easing-default);
+}
+
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .hero-content {
@@ -35,6 +44,13 @@
   align-items: center;
   gap: 0.5rem;
   animation: slideInDown 0.6s ease-out;
+  transition: all var(--transition-base) var(--easing-default);
+  cursor: default;
+}
+
+.name-badge:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .name-text {
@@ -55,6 +71,13 @@
   align-items: center;
   gap: 0.3rem;
   animation: slideInUp 0.6s ease-out 0.2s backwards;
+  transition: all var(--transition-base) var(--easing-default);
+  cursor: default;
+}
+
+.tagline-badge:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .tagline-text {
@@ -72,6 +95,7 @@
   background-color: var(--color-teal);
   animation: blink 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
   border-radius: 1px;
+  transition: background-color var(--transition-fast) var(--easing-default);
 }
 
 .cursor-name {
@@ -82,6 +106,14 @@
 .cursor-tagline {
   width: 0.25rem;
   height: 1.25rem;
+}
+
+.name-badge:hover .cursor-name {
+  background-color: var(--color-orange);
+}
+
+.tagline-badge:hover .cursor-tagline {
+  background-color: var(--color-orange);
 }
 
 /* Blink Animation - Sharp cursor effect */
@@ -116,5 +148,48 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* ====== ACCESSIBILITY ENHANCEMENTS ====== */
+
+/* Focus Styles for Keyboard Navigation */
+.name-badge:focus-within,
+.tagline-badge:focus-within {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-card,
+  .name-badge,
+  .tagline-badge {
+    animation: none;
+    transition: none;
+  }
+
+  .cursor {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: more) {
+  .name-badge,
+  .tagline-badge {
+    border-width: 3px;
+  }
+
+  .cursor {
+    background-color: var(--color-text-primary);
+  }
+}
+
+/* Dark Mode Support (if implemented) */
+@media (prefers-color-scheme: dark) {
+  .hero-card {
+    background-color: #d4a574;
   }
 }
