@@ -28,9 +28,24 @@
     min-height: 300px;
   }
 
-  /* Adjust hero for mobile prominence */
+  /* Increase hero visibility on mobile */
   .hero-card {
     min-height: 400px;
+  }
+
+  /* Scale down hero text for mobile */
+  .name-text {
+    font-size: 2rem;
+  }
+
+  .tagline-text {
+    font-size: 1rem;
+  }
+
+  /* Reduce badge padding on mobile */
+  .name-badge,
+  .tagline-badge {
+    padding: var(--space-sm);
   }
 
   /* Reduce content padding on mobile */
@@ -58,6 +73,30 @@
     gap: 0.75rem;
   }
 
+  .hero-content {
+    gap: var(--space-md);
+  }
+
+  .name-text {
+    font-size: 1.5rem;
+  }
+
+  .tagline-text {
+    font-size: 0.875rem;
+  }
+
+  .name-badge,
+  .tagline-badge {
+    padding: var(--space-xs);
+  }
+
+  .card-header-badge {
+    top: var(--space-sm);
+    left: var(--space-sm);
+    padding: var(--space-xs) var(--space-sm);
+    font-size: 1rem;
+  }
+
   .hero-content,
   .work-content,
   .projects-content,
@@ -68,16 +107,9 @@
   .misc-content {
     padding: var(--space-sm);
   }
-
-  .card-header-badge {
-    top: var(--space-sm);
-    left: var(--space-sm);
-    padding: var(--space-xs) var(--space-sm);
-    font-size: 1rem;
-  }
 }
 
-/* Tablet landscape and small desktop (1024px) */
+/* Tablet landscape and small desktop (769px - 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(6, 1fr);
@@ -123,6 +155,10 @@
   .misc-card {
     grid-column: 1 / 2;
     grid-row: 6 / 7;
+  }
+
+  .name-text {
+    font-size: 2.5rem;
   }
 }
 

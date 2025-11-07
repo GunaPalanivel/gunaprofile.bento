@@ -1,0 +1,244 @@
+/*  ROOT VARIABLES  */
+:root {
+  --color-yellow: #ffd60a;
+  --color-navy: #001d3d;
+  --color-teal: #00b4d8;
+  --color-orange: #ff9500;
+  --color-text-primary: #000;
+  --color-text-secondary: #ffffff;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --transition-base: 300ms;
+  --transition-fast: 100ms;
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --border: 2px solid var(--color-navy);
+}
+
+/*  HERO SECTION STYLES  */
+
+/* Hero Section Container */
+.hero-card {
+  background-color: var(--color-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-base) var(--easing-default),
+    box-shadow var(--transition-base) var(--easing-default);
+  contain: layout style paint;
+}
+
+.hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.hero-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  padding: var(--space-lg);
+}
+
+/*  BADGES CONTAINER  */
+
+.hero-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  animation-fill-mode: forwards;
+}
+
+/* Name Badge - Navy Background */
+.name-badge {
+  background-color: var(--color-navy);
+  border: var(--border);
+  padding: var(--space-md) var(--space-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  animation: slideInDown 0.6s ease-out;
+  transition: all var(--transition-base) var(--easing-default);
+  cursor: default;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.name-badge:hover {
+  transform: scale(1.02) translateZ(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.name-text {
+  color: var(--color-text-secondary);
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+/* Tagline Badge - Navy Background */
+.tagline-badge {
+  background-color: var(--color-navy);
+  border: var(--border);
+  padding: var(--space-sm) var(--space-md);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  animation: slideInUp 0.6s ease-out 0.2s backwards;
+  transition: all var(--transition-base) var(--easing-default);
+  cursor: default;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.tagline-badge:hover {
+  transform: scale(1.02) translateZ(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tagline-text {
+  color: var(--color-text-secondary);
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: 0.01em;
+}
+
+/*  CURSOR ELEMENTS  */
+
+.cursor {
+  display: inline-block;
+  background-color: var(--color-teal);
+  animation: blink 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+  border-radius: 1px;
+  transition: background-color var(--transition-fast) var(--easing-default);
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.cursor-name {
+  width: 0.5rem;
+  height: 3rem;
+}
+
+.cursor-tagline {
+  width: 0.25rem;
+  height: 1.25rem;
+}
+
+.name-badge:hover .cursor-name {
+  background-color: var(--color-orange);
+}
+
+.tagline-badge:hover .cursor-tagline {
+  background-color: var(--color-orange);
+}
+
+/*  ANIMATIONS  */
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/*  ACCESSIBILITY ENHANCEMENTS  */
+
+/* Focus Styles for Keyboard Navigation */
+.name-badge:focus-within,
+.tagline-badge:focus-within {
+  outline: 3px solid var(--color-teal);
+  outline-offset: 2px;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .hero-card,
+  .name-badge,
+  .tagline-badge,
+  .cursor {
+    animation: none;
+    transition: none;
+    will-change: auto;
+  }
+}
+
+/* High Contrast Support */
+@media (prefers-contrast: more) {
+  .name-badge,
+  .tagline-badge {
+    border-width: 3px;
+  }
+
+  .cursor {
+    background-color: var(--color-text-primary);
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .hero-card {
+    background-color: #d4a574;
+  }
+
+  .name-text,
+  .tagline-text {
+    color: #1a1a1a;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .name-text {
+    font-size: 2rem;
+  }
+
+  .tagline-text {
+    font-size: 1rem;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-1px);
+  }
+}
