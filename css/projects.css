@@ -1,0 +1,125 @@
+/* PROJECTS SECTION */
+.projects-card {
+  background-color: var(--color-teal);
+  position: relative;
+  overflow: hidden;
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projects-content {
+  width: 100%;
+  height: 100%;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  position: relative;
+  z-index: 2;
+}
+
+.card-header {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  z-index: 10;
+}
+
+.card-header h2 {
+  background-color: var(--color-navy);
+  color: var(--color-text-secondary);
+  border: var(--border);
+  padding: var(--space-sm) var(--space-md);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+/* Browser Window */
+.browser-window {
+  width: 90%;
+  height: 80%;
+  background: #fff;
+  border: 2px solid var(--color-border);
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.browser-header {
+  background: linear-gradient(135deg, #e0e0e0, #f5f5f5);
+  border-bottom: 2px solid var(--color-border);
+  padding: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.browser-controls {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.control {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-base) var(--easing-default);
+}
+
+.control.close {
+  background-color: #ff5f56;
+}
+
+.control.minimize {
+  background-color: #ffbd2e;
+}
+
+.control.maximize {
+  background-color: #27c93f;
+}
+
+.control:hover {
+  transform: scale(1.1);
+}
+
+.browser-url {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.85rem;
+  color: #666;
+  margin-left: auto;
+}
+
+.browser-content {
+  flex: 1;
+  overflow-y: auto;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 157, 143, 0.05),
+    rgba(42, 157, 143, 0.05)
+  );
+  padding: 1rem;
+}
+
+.window-inner {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 2px,
+    rgba(26, 157, 143, 0.1) 2px,
+    rgba(26, 157, 143, 0.1) 4px
+  );
+}

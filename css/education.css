@@ -1,0 +1,226 @@
+/* EDUCATION SECTION */
+.education-card {
+  background-color: var(--color-blue-light);
+  position: relative;
+  overflow: hidden;
+  border: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.education-content {
+  width: 100%;
+  height: 100%;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.education-card .card-header {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+}
+
+/* House Illustration */
+.house-illustration {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+/* Clouds */
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.cloud::before,
+.cloud::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+}
+
+.cloud {
+  width: 3rem;
+  height: 1.2rem;
+}
+
+.cloud::before {
+  width: 1.2rem;
+  height: 1.2rem;
+  top: -0.6rem;
+  left: 0.4rem;
+}
+
+.cloud::after {
+  width: 0.8rem;
+  height: 0.8rem;
+  top: -0.4rem;
+  right: 0.6rem;
+}
+
+.cloud-1 {
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.cloud-2 {
+  top: 15%;
+  right: 10%;
+  animation-delay: 1s;
+}
+
+/* House */
+.house {
+  position: relative;
+  width: 8rem;
+  height: 6rem;
+  margin-bottom: 1rem;
+}
+
+/* Roof */
+.roof {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 4rem solid transparent;
+  border-right: 4rem solid transparent;
+  border-bottom: 3rem solid #c67c4e;
+  z-index: 10;
+}
+
+/* Walls */
+.walls {
+  position: absolute;
+  bottom: 0;
+  width: 8rem;
+  height: 4rem;
+  background: #f4a261;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 0.5rem;
+}
+
+/* Windows */
+.window {
+  width: 1.2rem;
+  height: 1.2rem;
+  background: #e8f4f8;
+  border: 1px solid var(--color-border);
+  position: relative;
+}
+
+.window::before,
+.window::after {
+  content: "";
+  position: absolute;
+  background: var(--color-border);
+}
+
+.window::before {
+  width: 1px;
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.window::after {
+  height: 1px;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Door */
+.door {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 2rem;
+  background: #8b5a3c;
+  border: 1px solid var(--color-border);
+}
+
+.door-knob {
+  position: absolute;
+  width: 0.3rem;
+  height: 0.3rem;
+  background: #d4a574;
+  border-radius: 50%;
+  right: 0.3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Tree */
+.tree {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  width: 1.5rem;
+  height: 3rem;
+}
+
+.tree-foliage {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5rem;
+  height: 1.5rem;
+  background: #2a9d8f;
+  border-radius: 50%;
+  z-index: 5;
+}
+
+.tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0.4rem;
+  height: 1.5rem;
+  background: #8b5a3c;
+}
+
+/* Ground */
+.ground {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  background: linear-gradient(90deg, #90be6d, #7cb342);
+  z-index: 1;
+}
+
+/* Float Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
