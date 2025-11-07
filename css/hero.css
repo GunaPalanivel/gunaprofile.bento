@@ -1,4 +1,21 @@
-/* Hero Section Styles */
+/*  ROOT VARIABLES  */
+:root {
+  --color-yellow: #ffd60a;
+  --color-navy: #001d3d;
+  --color-teal: #00b4d8;
+  --color-orange: #ff9500;
+  --color-text-primary: #000;
+  --color-text-secondary: #ffffff;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --transition-base: 300ms;
+  --transition-fast: 100ms;
+  --easing-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --border: 2px solid var(--color-navy);
+}
+
+/*  HERO SECTION STYLES  */
 
 /* Hero Section Container */
 .hero-card {
@@ -8,6 +25,7 @@
   justify-content: center;
   transition: transform var(--transition-base) var(--easing-default),
     box-shadow var(--transition-base) var(--easing-default);
+  contain: layout style paint;
 }
 
 .hero-card:hover {
@@ -26,13 +44,15 @@
   padding: var(--space-lg);
 }
 
-/* Badges Container */
+/*  BADGES CONTAINER  */
+
 .hero-badges {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: var(--space-md);
+  animation-fill-mode: forwards;
 }
 
 /* Name Badge - Navy Background */
@@ -46,10 +66,12 @@
   animation: slideInDown 0.6s ease-out;
   transition: all var(--transition-base) var(--easing-default);
   cursor: default;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .name-badge:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) translateZ(0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -73,10 +95,12 @@
   animation: slideInUp 0.6s ease-out 0.2s backwards;
   transition: all var(--transition-base) var(--easing-default);
   cursor: default;
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .tagline-badge:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) translateZ(0);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -89,13 +113,16 @@
   letter-spacing: 0.01em;
 }
 
-/* Cursor Elements - Teal Color */
+/*  CURSOR ELEMENTS  */
+
 .cursor {
   display: inline-block;
   background-color: var(--color-teal);
   animation: blink 1s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
   border-radius: 1px;
   transition: background-color var(--transition-fast) var(--easing-default);
+  backface-visibility: hidden;
+  transform: translateZ(0);
 }
 
 .cursor-name {
@@ -116,7 +143,8 @@
   background-color: var(--color-orange);
 }
 
-/* Blink Animation - Sharp cursor effect */
+/*  ANIMATIONS  */
+
 @keyframes blink {
   0%,
   49% {
@@ -128,7 +156,6 @@
   }
 }
 
-/* Slide In Animations - Entry effects */
 @keyframes slideInDown {
   from {
     transform: translateY(-20px);
@@ -151,7 +178,7 @@
   }
 }
 
-/* ====== ACCESSIBILITY ENHANCEMENTS ====== */
+/*  ACCESSIBILITY ENHANCEMENTS  */
 
 /* Focus Styles for Keyboard Navigation */
 .name-badge:focus-within,
@@ -164,14 +191,11 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-card,
   .name-badge,
-  .tagline-badge {
-    animation: none;
-    transition: none;
-  }
-
+  .tagline-badge,
   .cursor {
     animation: none;
-    opacity: 1;
+    transition: none;
+    will-change: auto;
   }
 }
 
@@ -187,9 +211,34 @@
   }
 }
 
-/* Dark Mode Support (if implemented) */
+/* Dark Mode Support */
 @media (prefers-color-scheme: dark) {
   .hero-card {
     background-color: #d4a574;
+  }
+
+  .name-text,
+  .tagline-text {
+    color: #1a1a1a;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    gap: var(--space-md);
+    padding: var(--space-md);
+  }
+
+  .name-text {
+    font-size: 2rem;
+  }
+
+  .tagline-text {
+    font-size: 1rem;
+  }
+
+  .hero-card:hover {
+    transform: translateY(-1px);
   }
 }
