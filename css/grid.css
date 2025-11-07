@@ -1,0 +1,63 @@
+/* Bento Grid Layout System */
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(9, 1fr);
+    width: 100vw;
+    height: 100vh;
+    padding: 1.25rem;
+    gap: 1.25rem;
+    background-color: #d4c5b9;
+    overflow: hidden;
+}
+
+/* Grid Area Assignments */
+
+/* Hero: 4 columns × 3 rows (top-left to center) */
+.hero-card {
+    grid-column: 1 / 5;
+    grid-row: 1 / 4;
+}
+
+/* Work Experience: 3 columns × 6 rows (left side, bottom) */
+.work-card {
+    grid-column: 1 / 4;
+    grid-row: 4 / 10;
+}
+
+/* Projects: 3 columns × 3 rows (top-center) */
+.projects-card {
+    grid-column: 4 / 7;
+    grid-row: 1 / 4;
+}
+
+/* Education: 3 columns × 3 rows (top-right) */
+.education-card {
+    grid-column: 7 / 10;
+    grid-row: 1 / 4;
+}
+
+/* Blog: 2 columns × 4 rows (center-right) */
+.blog-card {
+    grid-column: 8 / 10;
+    grid-row: 4 / 8;
+}
+
+/* Resume: 2 columns × 3 rows (middle-left of center area) */
+.resume-card {
+    grid-column: 4 / 6;
+    grid-row: 4 / 7;
+}
+
+/* Contact: 5 columns × 3 rows (bottom-center) */
+.contact-card {
+    grid-column: 4 / 9;
+    grid-row: 7 / 10;
+}
+
+/* Misc: 2 columns × 2 rows (bottom-right corner) */
+.misc-card {
+    grid-column: 9 / 10;
+    grid-row: 8 / 10;
+}
