@@ -1,0 +1,99 @@
+/* Work Experience - 4 Grids Responsive */
+
+@media (max-width: 768px) {
+    .work-card {
+        min-height: 300px;
+    }
+
+    .work-content {
+        padding: var(--space-md);
+        gap: var(--space-sm);
+    }
+
+    .card-header h2 {
+        font-size: 1.25rem;
+        padding: var(--space-sm);
+    }
+
+    .work-grid-pattern {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.25rem;
+        padding: var(--space-sm);
+    }
+
+    .work-grid-item {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.15rem;
+    }
+
+    .grid-square {
+        border-width: 0.8px;
+    }
+
+    .decoration {
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 480px) {
+    .work-card {
+        min-height: 250px;
+    }
+
+    .work-content {
+        padding: var(--space-sm);
+        gap: var(--space-xs);
+    }
+
+    .card-header h2 {
+        font-size: 1rem;
+        padding: var(--space-xs);
+    }
+
+    .work-grid-pattern {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.2rem;
+        padding: var(--space-xs);
+    }
+
+    .work-grid-item {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        gap: 0.12rem;
+    }
+
+    .grid-square {
+        border-width: 0.5px;
+    }
+
+    .decoration {
+        transform: scale(0.5);
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .work-grid-pattern {
+        gap: 0.25rem;
+    }
+
+    .work-grid-item {
+        gap: 0.18rem;
+    }
+}
+
+@media (min-width: 1440px) {
+    .work-content {
+        padding: var(--space-lg);
+    }
+
+    .work-grid-pattern {
+        gap: 0.35rem;
+    }
+
+    .work-grid-item {
+        gap: 0.22rem;
+    }
+}
