@@ -1,8 +1,8 @@
-/* ============================================
+/* 
    RESUME SECTION - SMALL PAPER CLIP, CENTERED
-   ============================================ */
+    */
 
-/* ===== RESUME CARD ===== */
+/*  RESUME CARD  */
 .resume-card {
     background-color: var(--color-teal);
     position: relative;
@@ -25,7 +25,7 @@
     z-index: 0;
 }
 
-/* ===== RESUME CONTENT - CENTERED ===== */
+/*  RESUME CONTENT - CENTERED  */
 .resume-content {
     width: 100%;
     height: 100%;
@@ -39,7 +39,7 @@
     overflow: visible;
 }
 
-/* ===== RESUME LABEL ===== */
+/*  RESUME LABEL  */
 .resume-label {
     position: absolute;
     top: 1rem;
@@ -71,7 +71,7 @@
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-/* ===== DOCUMENT STACK WRAPPER - CENTERED ===== */
+/*  DOCUMENT STACK WRAPPER - CENTERED  */
 .document-stack-wrapper {
     position: relative;
     width: 160px;
@@ -82,7 +82,7 @@
     perspective: 1500px;
 }
 
-/* ===== DOCUMENT STACK ===== */
+/*  DOCUMENT STACK  */
 .document-stack {
     position: absolute;
     width: 160px;
@@ -102,7 +102,7 @@
     }
 }
 
-/* ===== PAGE STYLES ===== */
+/*  PAGE STYLES  */
 .page {
     position: absolute;
     width: 160px;
@@ -137,7 +137,7 @@
     position: relative;
 }
 
-/* ===== RESUME HEADER ===== */
+/*  RESUME HEADER  */
 .resume-header {
     padding: 0.8rem 0.8rem 0.4rem 0.8rem;
     border-bottom: 2px solid #e2e8f0;
@@ -160,7 +160,7 @@
     background: #64748b;
 }
 
-/* ===== PAGE CONTENT ===== */
+/*  PAGE CONTENT  */
 .page-content {
     width: 100%;
     height: 100%;
@@ -175,7 +175,7 @@
     gap: 0.5rem;
 }
 
-/* ===== RESUME SECTIONS ===== */
+/*  RESUME SECTIONS  */
 .resume-section {
     flex: 1;
     display: flex;
@@ -216,7 +216,7 @@
     width: 85%;
 }
 
-/* ===== ACCENT BLOCKS ===== */
+/*  ACCENT BLOCKS  */
 .accent-blocks {
     display: flex;
     gap: 0.4rem;
@@ -238,7 +238,7 @@
     background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
 }
 
-/* ===== BOOKMARK/FLAG ===== */
+/*  BOOKMARK/FLAG  */
 .bookmark {
     position: absolute;
     right: -1px;
@@ -263,7 +263,7 @@
     }
 }
 
-/* ===== 3D PAPER CLIP - SMALL & CENTERED ===== */
+/*  3D PAPER CLIP - SMALL & CENTERED  */
 .paperclip-3d {
     position: absolute;
     left: 50%;
@@ -284,7 +284,7 @@
     }
 }
 
-/* ===== PAPER CLIP STRUCTURE - COMPACT ===== */
+/*  PAPER CLIP STRUCTURE - COMPACT  */
 .paperclip-wrap {
     position: relative;
     width: 50px;
@@ -397,7 +397,7 @@
     z-index: -1;
 }
 
-/* ===== HOVER EFFECTS ===== */
+/*  HOVER EFFECTS  */
 .document-stack:hover .page-1 {
     transform: translateY(24px) translateX(-12px) rotate(16deg) skewY(3deg);
 }
@@ -414,7 +414,7 @@
     filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
-/* ===== ACCESSIBILITY ===== */
+/*  ACCESSIBILITY  */
 .resume-card:focus-within {
     outline: 3px solid var(--color-navy);
     outline-offset: -3px;
@@ -439,7 +439,7 @@
     }
 }
 
-/* ===== RESPONSIVE DESIGN ===== */
+/*  RESPONSIVE DESIGN  */
 
 /* Large Desktop: 1440px+ */
 @media (min-width: 1440px) {

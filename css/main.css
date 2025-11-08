@@ -1,21 +1,27 @@
-/*CSS modules all imports*/
+/* CSS modules - CORRECTED ORDER */
 
 @import "reset.css";
 @import "variables.css";
-@import "grid.css";
-@import "components.css";
 @import "typography.css";
-@import "responsive.css";
+@import "components.css";
+
+/* Component specific styles */
 @import "hero.css";
-@import "hero-responsive.css";
 @import "work.css";
-@import "work-responsive.css";
 @import "projects.css";
-@import "projects-responsive.css";
 @import "education.css";
-@import "education-responsive.css";
-@import "contact.css";
 @import "blog.css";
 @import "resume.css";
+@import "contact.css";
 @import "misc.css";
 
+/* Component responsive (must come before grid!) */
+@import "hero-responsive.css";
+@import "work-responsive.css";
+@import "projects-responsive.css";
+@import "education-responsive.css";
+@import "mobile-optimization.css";
+
+/* Grid MUST be last to override everything */
+@import "responsive.css";
+@import "grid.css";

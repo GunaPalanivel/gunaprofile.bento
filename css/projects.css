@@ -225,37 +225,44 @@
   position: relative;
 }
 
+/* 
+   WINDOW INNER - IMPROVED RESPONSIVE VERSION
+    */
+
 .window-inner {
+  position: relative;
   width: 100%;
   height: 100%;
-  background: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 2px,
-    rgba(26, 157, 143, 0.1) 2px,
-    rgba(26, 157, 143, 0.1) 4px
-  );
-  position: relative;
+  min-height: 80px;
+  padding: 1.2rem 0.8rem 0.8rem 1.2rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* 
-   TYPEWRITER ANIMATION IN BROWSER CONTENT
+   TYPEWRITER ANIMATION WITH RESPONSIVE FONT SIZE
     */
 
 .window-inner::before {
   content: 'const portfolio = {\A  name: "Guna",\A  skills: ["HTML", "CSS", "JavaScript"],\A  passion: "Building amazing UIs"\A}';
   white-space: pre;
   font-family: "Courier New", monospace;
-  font-size: 0.7rem;
+  font-size: clamp(0.75rem, 2vw, 1.15rem); /* base font size */
   color: var(--color-teal);
   position: absolute;
   left: 0.5rem;
   top: 0.5rem;
-  animation: typewriter 6s steps(80, end) infinite;
+  max-width: 98%;
+  width: 98%;
+  min-width: 0;
+  right: 0.1rem;
+  animation: typewriter 5s steps(80, end) infinite;
   overflow: hidden;
   border-right: 2px solid var(--color-teal);
   padding-right: 0.2rem;
+  background: none;
+  box-sizing: border-box;
+  z-index: 1;
   backface-visibility: hidden;
   transform: translateZ(0);
 }
@@ -451,8 +458,12 @@
     padding: 0.5rem;
   }
 
+  .window-inner {
+    padding: 1rem 0.6rem 0.6rem 1rem;
+  }
+
   .window-inner::before {
-    font-size: 0.65rem;
+    font-size: clamp(0.55rem, 1.2vw, 0.85rem);
   }
 
   .projects-card:hover .browser-window {
@@ -502,8 +513,13 @@
     padding: 0.75rem;
   }
 
+  .window-inner {
+    padding: 0.8rem 0.4rem 0.4rem 0.8rem;
+    min-height: 60px;
+  }
+
   .window-inner::before {
-    font-size: 0.6rem;
+    font-size: clamp(0.5rem, 1vw, 0.7rem);
     left: 0.3rem;
     top: 0.3rem;
     border-right-width: 1.5px;
@@ -538,9 +554,13 @@
     border-width: 1px;
   }
 
+  .window-inner {
+    padding: 0.5rem 0.3rem 0.3rem 0.5rem;
+  }
+
   .window-inner::before {
-    font-size: 0.55rem;
-    display: none;
+    font-size: clamp(0.45rem, 0.8vw, 0.6rem);
+    display: block; /* ✅ Changed from 'none' to keep visible */
   }
 
   .projects-card:hover::after {

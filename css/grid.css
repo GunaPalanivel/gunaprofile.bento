@@ -1,63 +1,393 @@
-/* Bento Grid Layout System */
+/* 
+   BENTO GRID SYSTEM - MOBILE FIRST
+   Universal device support (320px - 2560px+)
+   Scroll enabled on mobile, locked on desktop
+    */
+
+/* 
+   BASE: Mobile First (320px+)
+   Single column vertical stack
+   SCROLL ENABLED
+    */
 
 .bento-grid {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
-    grid-template-rows: repeat(9, 1fr);
-    width: 100vw;
-    height: 100vh;
-    padding: 1.25rem;
-    gap: 1.25rem;
-    background-color: #d4c5b9;
-    overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  min-height: 100vh;
+  height: auto; /* ✅ CRITICAL: Allows scrolling */
+  background-color: #d4c5b9;
+  overflow-y: auto; /* ✅ Enables scroll */
+  overflow-x: hidden;
 }
 
-/* Grid Area Assignments - Precisely Mapped to Visual Reference */
-
-/* Work Experience: 3 columns × 6 rows (left side, tall vertical section) */
-.work-card {
-    grid-column: 1 / 4;
-    grid-row: 1 / 7;
+/* Mobile: All sections stack vertically */
+.bento-grid > section {
+  width: 100%;
+  min-height: 200px;
+  position: relative;
+  border: 2px solid var(--color-border);
+  overflow: hidden;
 }
 
-/* Projects: 3 columns × 3 rows (top-center with browser UI) */
-.projects-card {
-    grid-column: 4 / 7;
-    grid-row: 1 / 4;
-}
-
-/* Education: 3 columns × 3 rows (top-right with house illustration) */
-.education-card {
-    grid-column: 7 / 10;
-    grid-row: 1 / 4;
-}
-
-/* Hero (Yellow): 4 columns × 3 rows (center, "Urvashi" name section) */
+/* ✅ Explicit stacking order for mobile */
 .hero-card {
-    grid-column: 4 / 8;
-    grid-row: 4 / 7;
+  order: 1;
+  min-height: 250px;
 }
 
-/* Blog: 2 columns × 4 rows (right side, browser window preview) */
+.projects-card {
+  order: 2;
+  min-height: 200px;
+}
+
+.education-card {
+  order: 3;
+  min-height: 220px;
+}
+
 .blog-card {
-    grid-column: 8 / 10;
-    grid-row: 4 / 8;
+  order: 4;
+  min-height: 200px;
 }
 
-/* Resume: 2 columns × 3 rows (bottom-left, document with bookmark) */
+.work-card {
+  order: 5;
+  min-height: 350px; /* ✅ Increased for content visibility */
+}
+
 .resume-card {
-    grid-column: 1 / 3;
-    grid-row: 7 / 10;
+  order: 6;
+  min-height: 240px;
 }
 
-/* Contact: 4 columns × 3 rows (bottom-center, envelope with social icons) */
 .contact-card {
-    grid-column: 3 / 8;
-    grid-row: 7 / 10;
+  order: 7;
+  min-height: 280px; /* ✅ Increased for envelope + icons */
 }
 
-/* Misc: 2 columns × 2 rows (bottom-right, flower illustration) */
 .misc-card {
-    grid-column: 8 / 10;  /* Changed from 7/9 to 8/10 */
-    grid-row: 8 / 10;     /* Adjusted row to 8/10 */
+  order: 8;
+  min-height: 160px;
+}
+
+/* 
+   SMALL PHONES: 480px+ (Pixel 7 = 412px)
+    */
+@media (min-width: 480px) {
+  .bento-grid {
+    gap: 1.25rem;
+    padding: 1.25rem;
+  }
+
+  .hero-card {
+    min-height: 280px;
+  }
+  .projects-card {
+    min-height: 220px;
+  }
+  .education-card {
+    min-height: 240px;
+  }
+  .work-card {
+    min-height: 400px;
+  }
+  .contact-card {
+    min-height: 300px;
+  }
+}
+
+/* 
+   TABLETS PORTRAIT: 768px+
+   2 column hybrid
+    */
+@media (min-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+    padding: 1.25rem;
+    height: auto; /* ✅ Still scrollable */
+  }
+
+  /* Hero spans full width */
+  .hero-card {
+    grid-column: 1 / -1;
+    order: 1;
+    min-height: 220px;
+  }
+
+  /* Projects and Education side by side */
+  .projects-card {
+    order: 2;
+    min-height: 280px;
+  }
+
+  .education-card {
+    order: 3;
+    min-height: 280px;
+  }
+
+  /* Blog and Work side by side */
+  .blog-card {
+    order: 4;
+    min-height: 280px;
+  }
+
+  .work-card {
+    order: 5;
+    min-height: 400px;
+  }
+
+  /* Resume and Contact side by side */
+  .resume-card {
+    order: 6;
+    min-height: 280px;
+  }
+
+  .contact-card {
+    order: 7;
+    min-height: 280px;
+  }
+
+  /* Skills spans full width */
+  .misc-card {
+    grid-column: 1 / -1;
+    order: 8;
+    min-height: 160px;
+  }
+}
+
+/* 
+   TABLETS LANDSCAPE: 1024px - 1279px
+   3 column hybrid (NOT 9×9 yet)
+    */
+@media (min-width: 1024px) and (max-width: 1279px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: auto !important;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    height: auto !important;
+    overflow-y: auto !important;
+  }
+
+  /* Hero spans full width */
+  .hero-card {
+    grid-column: 1 / -1 !important;
+    grid-row: auto !important;
+    order: 1;
+    min-height: 240px;
+  }
+
+  /* Projects, Education, Blog in one row */
+  .projects-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    order: 2;
+    min-height: 300px;
+  }
+
+  .education-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    order: 3;
+    min-height: 300px;
+  }
+
+  .blog-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    order: 4;
+    min-height: 300px;
+  }
+
+  /* Work spans 2 cols, Resume 1 col */
+  .work-card {
+    grid-column: span 2 !important;
+    grid-row: auto !important;
+    order: 5;
+    min-height: 350px;
+  }
+
+  .resume-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    order: 6;
+    min-height: 350px;
+  }
+
+  /* Contact spans 2 cols, Skills 1 col */
+  .contact-card {
+    grid-column: span 2 !important;
+    grid-row: auto !important;
+    order: 7;
+    min-height: 280px;
+  }
+
+  .misc-card {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    order: 8;
+    min-height: 280px;
+  }
+}
+
+/* 
+   LAPTOPS: 1280px - 1439px
+   9×9 Grid STARTS HERE (No white space)
+    */
+@media (min-width: 1280px) and (max-width: 1439px) {
+  .bento-grid {
+    display: grid !important;
+    grid-template-columns: repeat(9, 1fr) !important;
+    grid-template-rows: repeat(9, 1fr) !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    gap: 1rem !important;
+    padding: 1rem !important;
+    overflow: hidden !important;
+    min-height: unset !important; /* ✅ ADDED: Resets inherited min-height */
+  }
+
+  /* Reset ALL conflicting properties */
+  .bento-grid > section {
+    order: unset !important;
+    min-height: auto !important;
+    height: 100% !important;
+    width: 100% !important; /* ✅ ADDED: Ensures full width */
+  }
+
+  /* 9×9 Grid Positions */
+  .work-card {
+    grid-column: 1 / 4 !important;
+    grid-row: 1 / 7 !important;
+  }
+
+  .projects-card {
+    grid-column: 4 / 7 !important;
+    grid-row: 1 / 4 !important;
+  }
+
+  .education-card {
+    grid-column: 7 / 10 !important;
+    grid-row: 1 / 4 !important;
+  }
+
+  .hero-card {
+    grid-column: 4 / 8 !important;
+    grid-row: 4 / 7 !important;
+  }
+
+  .blog-card {
+    grid-column: 8 / 10 !important;
+    grid-row: 4 / 8 !important;
+  }
+
+  .resume-card {
+    grid-column: 1 / 3 !important;
+    grid-row: 7 / 10 !important;
+  }
+
+  .contact-card {
+    grid-column: 3 / 8 !important;
+    grid-row: 7 / 10 !important;
+  }
+
+  .misc-card {
+    grid-column: 8 / 10 !important;
+    grid-row: 8 / 10 !important;
+  }
+}
+
+/* 
+   DESKTOP: 1440px+
+   9×9 Grid with larger spacing
+    */
+@media (min-width: 1440px) {
+  .bento-grid {
+    display: grid !important;
+    grid-template-columns: repeat(9, 1fr) !important;
+    grid-template-rows: repeat(9, 1fr) !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    gap: 1.25rem !important;
+    padding: 1.25rem !important;
+    overflow: hidden !important;
+    min-height: unset !important; /* ✅ ADDED: Resets inherited min-height */
+  }
+
+  /* Reset ALL conflicting properties */
+  .bento-grid > section {
+    order: unset !important;
+    min-height: auto !important;
+    height: 100% !important;
+    width: 100% !important; /* ✅ ADDED: Ensures full width */
+  }
+
+  /* Same 9×9 positions as 1280px */
+  .work-card {
+    grid-column: 1 / 4 !important;
+    grid-row: 1 / 7 !important;
+  }
+
+  .projects-card {
+    grid-column: 4 / 7 !important;
+    grid-row: 1 / 4 !important;
+  }
+
+  .education-card {
+    grid-column: 7 / 10 !important;
+    grid-row: 1 / 4 !important;
+  }
+
+  .hero-card {
+    grid-column: 4 / 8 !important;
+    grid-row: 4 / 7 !important;
+  }
+
+  .blog-card {
+    grid-column: 8 / 10 !important;
+    grid-row: 4 / 8 !important;
+  }
+
+  .resume-card {
+    grid-column: 1 / 3 !important;
+    grid-row: 7 / 10 !important;
+  }
+
+  .contact-card {
+    grid-column: 3 / 8 !important;
+    grid-row: 7 / 10 !important;
+  }
+
+  .misc-card {
+    grid-column: 8 / 10 !important;
+    grid-row: 8 / 10 !important;
+  }
+}
+
+/* 
+   LARGE MONITORS: 1920px+
+   Optimized for 1080p/1440p displays
+    */
+@media (min-width: 1920px) {
+  .bento-grid {
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+}
+
+/* 
+   ULTRA-WIDE: 2560px+
+   Max width container
+    */
+@media (min-width: 2560px) {
+  .bento-grid {
+    max-width: 2560px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding: 2.5rem;
+  }
 }
