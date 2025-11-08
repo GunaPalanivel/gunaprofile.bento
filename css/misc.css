@@ -38,8 +38,8 @@
 /*  SKILLS HEADER LABEL - TOP LEFT  */
 .skills-header-label {
   position: absolute;
-  top: 0.0rem;
-  left: 0.0rem;
+  top: 0.8rem;
+  left: 0.8rem;
   background: var(--color-navy);
   border: 2px solid var(--color-border);
   padding: 0.35rem 0.7rem;
@@ -71,13 +71,14 @@
 .skills-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 0.5rem;
-  width: auto;
+  gap: 0.3rem;
+  width: auto; /* flexible width */
   height: auto;
   align-content: center;
   justify-items: center;
-  position: relative;
-  transform: translateY(5.5rem) translateX(5.5rem);
+  position: relative; /* relative positioning to allow layering */
+  z-index: 1; /* below .skills-header-label (which uses z-index: 10) */
+  transform: translate(0, 0); /* no offset, positioned at top-left of parent */
   transition: transform var(--transition-base) var(--easing-default);
 }
 
