@@ -1,14 +1,55 @@
-/* Modern CSS Reset - Box sizing rules */
+/* 
+   MODERN CSS RESET & NORMALIZE - COMPLETE
+    */
+
+/* 
+   BOX SIZING & UNIVERSAL RESET
+    */
+
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* Remove default margin and padding */
-body,
+/* 
+   ROOT & HTML SETUP
+    */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
+}
+
+/* Responsive font sizing */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 
+   BODY DEFAULTS
+    */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
+  overflow-y: auto; /* ✅ Allows vertical scroll */
+}
+
+/* 
+   TYPOGRAPHY RESET
+    */
+
 h1,
 h2,
 h3,
@@ -20,61 +61,63 @@ figure,
 blockquote,
 dl,
 dd {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-/* Set core root defaults */
-html {
-    scroll-behavior: smooth;
-    overflow: hidden;
-}
+/* 
+   LISTS RESET
+    */
 
-/* Set core body defaults */
-body {
-    min-height: 100vh;
-    text-rendering: optimizeSpeed;
-    line-height: 1.6;
-    overflow: hidden;
-}
-
-/* Remove list styles */
 ul,
 ol {
-    list-style: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-/* Make images easier to work with */
+/* 
+   MEDIA ELEMENTS
+    */
+
 img,
 picture,
 svg {
-    max-width: 100%;
-    display: block;
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Inherit fonts for inputs and buttons */
+/* 
+   FORM ELEMENTS
+    */
+
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-/* Remove default button styles */
 button {
-    background: none;
-    border: none;
-    cursor: pointer;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
-/* Remove animations for people who've turned them off */
+/* 
+   ACCESSIBILITY - PREFERS REDUCED MOTION
+    */
+
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

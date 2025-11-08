@@ -1,9 +1,9 @@
-/* ============================================
+/* 
    CONTACT SECTION - GRID INTEGRATED
    Fits within: grid-column: 3 / 8; grid-row: 7 / 10;
-   ============================================ */
+    */
 
-/* ===== CONTACT CARD - GRID CONSTRAINED ===== */
+/*  CONTACT CARD - GRID CONSTRAINED  */
 .contact-card {
   background: linear-gradient(135deg, #b3d9e8 0%, #9ecde0 100%);
   position: relative;
@@ -36,7 +36,7 @@
   z-index: 0;
 }
 
-/* ===== CONTACT CONTENT - GRID CONSTRAINED ===== */
+/*  CONTACT CONTENT - GRID CONSTRAINED  */
 .contact-content {
   width: 100%;
   height: 100%;
@@ -51,7 +51,7 @@
   overflow: hidden;
 }
 
-/* ===== ENVELOPE ILLUSTRATION - RESPONSIVE SIZING ===== */
+/*  ENVELOPE ILLUSTRATION - RESPONSIVE SIZING  */
 .envelope-illustration {
   flex: 0 0 auto;
   display: flex;
@@ -149,7 +149,7 @@
   }
 }
 
-/* ===== MIDDLE SECTION - SIMPLE TEXT ===== */
+/*  MIDDLE SECTION - SIMPLE TEXT  */
 .middle-section {
   flex: 0 0 auto;
   display: flex;
@@ -187,7 +187,7 @@
   text-overflow: ellipsis;
 }
 
-/* ===== SOCIAL ICONS GRID - COMPACT ===== */
+/*  SOCIAL ICONS GRID - COMPACT  */
 .social-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -303,7 +303,7 @@
   outline-offset: -2px;
 }
 
-/* ===== ACCESSIBILITY ===== */
+/*  ACCESSIBILITY  */
 @media (prefers-reduced-motion: reduce) {
   .envelope-illustration,
   .middle-section,
@@ -343,7 +343,7 @@
   }
 }
 
-/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/*  RESPONSIVE ADJUSTMENTS  */
 
 /* Tablet landscape: 768px - 1024px */
 @media (max-width: 1024px) {

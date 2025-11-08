@@ -1,194 +1,263 @@
-/* Projects Section - Responsive Design */
+/* 
+   PROJECTS SECTION - RESPONSIVE DESIGN
+   Content-driven breakpoints for optimal display
+    */
 
-/* Tablet: 768px and below */
+/* 
+   TABLET: 768px and below
+    */
 @media (max-width: 768px) {
-    .projects-card {
-        min-height: 250px;
-        grid-column: 1 / -1;
-    }
+  .projects-card {
+    min-height: 250px;
+    grid-column: 1 / -1;
+  }
 
-    .projects-content {
-        padding: var(--space-md);
-        gap: var(--space-sm);
-    }
+  .projects-content {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
 
-    .card-header h2 {
-        font-size: 1.1rem;
-        padding: var(--space-xs) var(--space-sm);
-    }
+  .card-header h2 {
+    font-size: 1.1rem;
+    padding: var(--space-xs) var(--space-sm);
+  }
 
-    .browser-window {
-        width: 95%;
-        height: 75%;
-        border-radius: 0.4rem;
-    }
+  .browser-window {
+    width: 95%;
+    height: 75%;
+    border-radius: 0.4rem;
+  }
 
-    .browser-header {
-        padding: 0.6rem;
-        gap: 0.3rem;
-    }
+  .browser-header {
+    padding: 0.6rem;
+    gap: 0.3rem;
+  }
 
-    .control {
-        width: 0.9rem;
-        height: 0.9rem;
-    }
+  .control {
+    width: 0.9rem;
+    height: 0.9rem;
+  }
 
-    .browser-url {
-        font-size: 0.7rem;
-        padding: 0.25rem 0.4rem;
-        margin-left: auto;
-    }
+  .browser-url {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.4rem;
+    margin-left: auto;
+  }
 
-    .window-inner {
-        padding: 0.75rem;
-    }
+  .window-inner {
+    padding: 0.75rem;
+  }
 }
 
-/* Small Mobile: 480px and below */
+/* 
+   SMALL MOBILE: 480px and below
+    */
 @media (max-width: 480px) {
-    .projects-card {
-        min-height: 200px;
-    }
+  .projects-card {
+    min-height: 200px;
+  }
 
-    .projects-content {
-        padding: var(--space-sm);
-        gap: var(--space-xs);
-    }
+  .projects-content {
+    padding: var(--space-sm);
+    gap: var(--space-xs);
+  }
 
-    .card-header h2 {
-        font-size: 0.9rem;
-        padding: var(--space-xs);
-    }
+  .card-header h2 {
+    font-size: 0.9rem;
+    padding: var(--space-xs);
+  }
 
-    .browser-window {
-        width: 98%;
-        height: 70%;
-        border-width: 1px;
-        border-radius: 0.3rem;
-    }
+  .browser-window {
+    width: 98%;
+    height: 70%;
+    border-width: 1px;
+    border-radius: 0.3rem;
+  }
 
-    .browser-header {
-        padding: 0.5rem;
-        gap: 0.25rem;
-    }
+  .browser-header {
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
 
-    .control {
-        width: 0.8rem;
-        height: 0.8rem;
-    }
+  .control {
+    width: 0.8rem;
+    height: 0.8rem;
+  }
 
-    .browser-url {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.3rem;
-    }
+  .browser-url {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.3rem;
+  }
 
-    .browser-content {
-        padding: 0.5rem;
-    }
+  .browser-content {
+    padding: 0.5rem;
+  }
 
-    .window-inner {
-        padding: 0.5rem;
-    }
+  .window-inner {
+    padding: 0.5rem;
+  }
 }
 
-/* Tablet Landscape: 769px - 1024px */
+/* 
+   RESPONSIVE TYPEWRITER TEXT: 600px and below
+   Enhanced mobile typography scaling
+    */
+@media (max-width: 600px) {
+  .window-inner::before {
+    font-size: clamp(0.5rem, 2.8vw, 0.65rem);
+    max-width: 94%;
+    width: 94%;
+  }
+
+  .window-inner {
+    padding: 0.5rem 0.25rem 0.25rem 0.6rem;
+  }
+}
+
+/* 
+   TABLET LANDSCAPE: 769px - 1024px
+    */
 @media (min-width: 769px) and (max-width: 1024px) {
-    .projects-card {
-        min-height: 280px;
-    }
+  .projects-card {
+    min-height: 280px;
+  }
 
-    .browser-window {
-        width: 92%;
-        height: 80%;
-    }
+  .browser-window {
+    width: 92%;
+    height: 80%;
+  }
 
-    .card-header h2 {
-        font-size: 1.15rem;
-    }
+  .card-header h2 {
+    font-size: 1.15rem;
+  }
 
-    .browser-url {
-        font-size: 0.8rem;
-    }
+  .browser-url {
+    font-size: 0.8rem;
+  }
 }
 
-/* Large Desktop: 1440px+ */
+/* 
+   RESPONSIVE TYPEWRITER TEXT: 1023px and below
+   Uses fluid typography for better scaling
+    */
+@media (max-width: 1023px) {
+  .window-inner::before {
+    font-size: clamp(0.5rem, 2vw, 0.75rem);
+    max-width: 96%;
+    width: 96%;
+  }
+
+  .window-inner {
+    padding: 0.7rem 0.5rem 0.5rem 0.8rem;
+  }
+}
+
+/* 
+   MID-SIZE SCREENS: 1100px - 1440px
+   Optimized for smaller laptops and large tablets
+    */
+@media (min-width: 1100px) and (max-width: 1440px) {
+  .window-inner {
+    padding: 1.5rem 1rem 1rem 1.5rem;
+  }
+
+  .window-inner::before {
+    font-size: clamp(0.85rem, 1.6vw, 1.25rem);
+    max-width: 95%;
+    width: 95%;
+    left: 1rem;
+    top: 1rem;
+    padding-right: 0.3rem;
+  }
+}
+
+/* 
+   LARGE DESKTOP: 1440px+
+    */
 @media (min-width: 1440px) {
-    .projects-card {
-        min-height: 320px;
-    }
+  .projects-card {
+    min-height: 320px;
+  }
 
-    .projects-content {
-        padding: var(--space-xl);
-    }
+  .projects-content {
+    padding: var(--space-xl);
+  }
 
-    .browser-window {
-        width: 85%;
-        height: 85%;
-        box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
-    }
+  .browser-window {
+    width: 85%;
+    height: 85%;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
 
-    .card-header h2 {
-        font-size: 1.4rem;
-        padding: var(--space-md) var(--space-lg);
-    }
+  .card-header h2 {
+    font-size: 1.4rem;
+    padding: var(--space-md) var(--space-lg);
+  }
 
-    .browser-header {
-        padding: 0.9rem;
-    }
+  .browser-header {
+    padding: 0.9rem;
+  }
 
-    .control {
-        width: 1.1rem;
-        height: 1.1rem;
-    }
+  .control {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
 
-    .browser-url {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
-    }
+  .browser-url {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
 }
 
-/* Ultra-wide: 1920px+ */
+/* 
+   ULTRA-WIDE: 1920px+
+    */
 @media (min-width: 1920px) {
-    .projects-card {
-        min-height: 350px;
-    }
+  .projects-card {
+    min-height: 350px;
+  }
 
-    .browser-window {
-        width: 80%;
-        height: 88%;
-    }
+  .browser-window {
+    width: 80%;
+    height: 88%;
+  }
 
-    .card-header h2 {
-        font-size: 1.5rem;
-    }
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
 
-    .browser-url {
-        font-size: 1rem;
-    }
+  .browser-url {
+    font-size: 1rem;
+  }
 }
 
-/* Landscape orientation optimization */
+/* 
+   LANDSCAPE ORIENTATION: Low height screens
+    */
 @media (orientation: landscape) and (max-height: 600px) {
-    .projects-card {
-        min-height: auto;
-    }
+  .projects-card {
+    min-height: auto;
+  }
 
-    .browser-window {
-        height: 90%;
-    }
+  .browser-window {
+    height: 90%;
+  }
 
-    .projects-content {
-        gap: var(--space-xs);
-    }
+  .projects-content {
+    gap: var(--space-xs);
+  }
 }
 
-/* Touch device optimization */
+/* 
+   TOUCH DEVICE OPTIMIZATION
+   Adjusts interaction patterns for touch screens
+    */
 @media (hover: none) and (pointer: coarse) {
-    .control:hover {
-        transform: none;
-    }
+  .control:hover {
+    transform: none;
+  }
 
-    .control:active {
-        transform: scale(1.08);
-    }
+  .control:active {
+    transform: scale(1.08);
+  }
 }
