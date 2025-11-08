@@ -1,0 +1,30 @@
+/* Quick override - add to end of your CSS */
+.name-text {
+  font-size: 1.5rem !important;
+}
+
+.tagline-text {
+  font-size: 0.875rem !important;
+}
+
+/* For mobile */
+@media (max-width: 480px) {
+  .name-text {
+    font-size: 1rem !important;
+  }
+
+  .tagline-text {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* For tablets */
+@media (min-width: 481px) and (max-width: 768px) {
+  .name-text {
+    font-size: 1.25rem !important;
+  }
+
+  .tagline-text {
+    font-size: 0.8rem !important;
+  }
+}
