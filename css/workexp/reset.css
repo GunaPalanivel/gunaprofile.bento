@@ -1,0 +1,124 @@
+/* 
+   MODERN CSS RESET & NORMALIZE - COMPLETE
+    */
+
+/* 
+   BOX SIZING & UNIVERSAL RESET
+    */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+   ROOT & HTML SETUP
+    */
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
+}
+
+/* Responsive font sizing */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+/* 
+   BODY DEFAULTS
+    */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  overflow-x: hidden; /* ✅ Prevents horizontal scroll */
+  overflow-y: auto; /* ✅ Allows vertical scroll */
+}
+
+/* 
+   TYPOGRAPHY RESET
+    */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+   LISTS RESET
+    */
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 
+   MEDIA ELEMENTS
+    */
+
+img,
+picture,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 
+   FORM ELEMENTS
+    */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 
+   ACCESSIBILITY - PREFERS REDUCED MOTION
+    */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
