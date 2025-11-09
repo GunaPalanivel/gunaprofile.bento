@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technical Projects Grid - Bento</title>
+    <style>
+        :root {
+            --color-red: #BC4749;
+            --color-green-light: #A7C957;
+            --color-green-dark: #386641;
+            --color-green-medium: #6A994E;
+            --color-cream: #F2E8CF;
+            --color-teal: #2A9D8F;
+            --border-color: #222;
+        }
+
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100vw;
+            font-family: Arial, sans-serif;
+            background: #ebeaea;
+            box-sizing: border-box;
+        }
+
+        .grid-container {
+            display: grid;
+            width: 100vw;
+            height: 100vh;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 1fr 1fr 1fr;
+        }
+
+        /* Top (Row 1) */
+        .box1 {
+            grid-column: 1 / span 6;
+            grid-row: 1 / 2;
+            background: var(--color-red);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        .box2 {
+            grid-column: 7 / span 6;
+            grid-row: 1 / 2;
+            background: var(--color-green-light);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        /* Center (Row 2 Hero) */
+        .hero {
+            grid-column: 5 / span 4;
+            grid-row: 2 / 3;
+            background: var(--color-green-dark);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* Center text inside bento */
+            box-shadow: 0 0 0.5rem #0001;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            margin: 0 0 1.5rem;
+            font-size: 2.5rem;
+            background: var(--color-cream);
+            color: var(--color-red);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            border: 1px solid #444;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .hero p {
+            background: var(--color-cream);
+            color: var(--color-red);
+            border: 1px solid #444;
+            width: fit-content;
+            padding: 0.7rem 1.3rem;
+            font-size: 1.2rem;
+            margin: 0;
+            border-radius: 7px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* Pulse animation bars (as per original) */
+        .hero .bar1 {
+            background: var(--color-teal);
+            width: 36px;
+            height: 7px;
+            display: inline-block;
+            margin-left: 0.8rem;
+            border-radius: 5px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        .hero .bar2 {
+            background: var(--color-teal);
+            width: 22px;
+            height: 4px;
+            display: inline-block;
+            margin-left: 0.5rem;
+            border-radius: 3px;
+            vertical-align: middle;
+            animation: pulse 2s infinite;
+        }
+
+        /* Bottom Row */
+        .box3 {
+            grid-column: 1 / span 6;
+            grid-row: 3 / 4;
+            background: var(--color-green-medium);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        .box4 {
+            grid-column: 7 / span 3;
+            grid-row: 3 / 4;
+            background: var(--color-green-medium);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        .box5 {
+            grid-column: 10 / span 3;
+            grid-row: 3 / 4;
+            background: var(--color-green-medium);
+            border: 1px solid var(--border-color);
+            box-sizing: border-box;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.1;
+            }
+        }
+
+        /* Responsive for smaller screens */
+        @media (max-width: 900px) {
+            .grid-container {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+            }
+
+            .box1,
+            .box2,
+            .hero,
+            .box3,
+            .box4,
+            .box5 {
+                grid-column: 1 / -1;
+            }
+
+            .box1 {
+                grid-row: 1 / 2;
+            }
+
+            .box2 {
+                grid-row: 2 / 3;
+            }
+
+            .hero {
+                grid-row: 3 / 4;
+            }
+
+            .box3 {
+                grid-row: 4 / 5;
+            }
+
+            .box4 {
+                grid-row: 5 / 6;
+            }
+
+            .box5 {
+                grid-row: 6 / 7;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-container">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="hero">
+            <h1>
+                Technical Projects <span class="bar1"></span>
+            </h1>
+            <p>
+                Here are some of the technical projects I've worked on over the years <span class="bar2"></span>
+            </p>
+        </div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+    </div>
+</body>
+
+</html>
