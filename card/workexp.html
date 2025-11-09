@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Work Experience Bento</title>
+    <style>
+        /* ========================================
+           CSS Custom Properties
+           ======================================== */
+        :root {
+            --color-orange: #f4a261;
+            --color-teal: #2a9d8f;
+            --color-blue-light: #9ad1ea;
+            --color-blue-pale: #94d1ee;
+            --color-yellow: #e9c46a;
+            --color-navy: #264653;
+            --color-stone: #d4c5b9;
+            --color-green-dark: #20645b;
+            --color-green-light: #8bdb81;
+            --color-purple: #7747a6;
+            --color-pink: #ee6c94;
+            --color-coral: #ffad60;
+            --color-dark: #22223b;
+
+            --color-background: var(--color-stone);
+            --color-border: #22223b;
+
+            --border-width: 2px;
+            --border-style: solid;
+            --border: var(--border-width) var(--border-style) var(--color-border);
+
+            --radius-md: 0.5rem;
+
+            --space-sm: 0.75rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+        }
+
+        /* ========================================
+           Reset & Base Styles
+           ======================================== */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            min-height: 100vh;
+            background: var(--color-background);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        /* ========================================
+           Bento Grid Layout (Asymmetric)
+           ======================================== */
+        main {
+            display: grid;
+
+            /* Bento-style asymmetric columns */
+            grid-template-columns: 1fr 2.5fr 1.3fr 1fr;
+
+            /* Varied row heights for visual interest */
+            grid-template-rows: 1.8fr 1fr 2fr;
+
+            gap: var(--space-md);
+            min-height: 100vh;
+            padding: var(--space-lg);
+        }
+
+        /* ========================================
+           Hero Section (Main Feature)
+           ======================================== */
+        .bento-main {
+            /* Spans 2 columns × 2 rows (feature block) */
+            grid-column: 2 / 4;
+            grid-row: 1 / 3;
+
+            background: var(--color-green-dark);
+            border-radius: var(--radius-md);
+            border: var(--border);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            padding: var(--space-lg);
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: var(--space-md);
+        }
+
+        .bento-main h1 {
+            color: var(--color-orange);
+            background: var(--color-stone);
+            font-size: clamp(1.8rem, 4vw, 2.6rem);
+            font-weight: 700;
+            border-radius: var(--radius-md);
+            padding: var(--space-md) var(--space-lg);
+            border: var(--border);
+            letter-spacing: 0.02em;
+            width: fit-content;
+        }
+
+        .bento-main p {
+            color: var(--color-orange);
+            background: var(--color-stone);
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            border-radius: var(--radius-md);
+            border: var(--border);
+            padding: var(--space-sm) var(--space-lg);
+            width: fit-content;
+            line-height: 1.4;
+        }
+
+        /* ========================================
+           Grid Blocks (Supporting Content)
+           ======================================== */
+        .bento-grid-block {
+            border-radius: var(--radius-md);
+            border: var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            font-weight: 600;
+            padding: var(--space-md);
+            text-align: center;
+
+            min-width: 0;
+            min-height: 0;
+
+            cursor: default;
+            user-select: none;
+
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .bento-grid-block:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ========================================
+           Grid Positioning (Bento Layout)
+           ======================================== */
+
+        /* Top-left: Small square */
+        .grid1 {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        /* Top-right: Small square */
+        .grid2 {
+            grid-column: 4 / 5;
+            grid-row: 1 / 2;
+        }
+
+        /* Left side: Tall rectangle (spans 2 rows) */
+        .grid3 {
+            grid-column: 1 / 2;
+            grid-row: 2 / 4;
+        }
+
+        /* Middle-right: Small square */
+        .grid4 {
+            grid-column: 4 / 5;
+            grid-row: 2 / 3;
+        }
+
+        /* Bottom: Wide rectangle (spans 3 columns) */
+        .grid5 {
+            grid-column: 2 / 5;
+            grid-row: 3 / 4;
+        }
+
+        /* ========================================
+           Color Themes & Hover Effects
+           ======================================== */
+
+        .grid1 {
+            background: var(--color-teal);
+            color: #fff;
+        }
+
+        .grid1:hover {
+            background: #207a70;
+            color: #ffd60a;
+        }
+
+        .grid2 {
+            background: var(--color-yellow);
+            color: #22223b;
+        }
+
+        .grid2:hover {
+            background: var(--color-orange);
+            color: #fff;
+        }
+
+        .grid3 {
+            background: var(--color-purple);
+            color: #f2e9e4;
+        }
+
+        .grid3:hover {
+            background: #c065e4;
+            color: #fde5a7;
+        }
+
+        .grid4 {
+            background: var(--color-green-light);
+            color: var(--color-dark);
+        }
+
+        .grid4:hover {
+            background: #53b45e;
+            color: #fff;
+        }
+
+        .grid5 {
+            background: var(--color-pink);
+            color: #fff;
+        }
+
+        .grid5:hover {
+            background: #bd4b72;
+            color: #ffe066;
+        }
+
+        /* ========================================
+           Responsive Design (Mobile-First)
+           ======================================== */
+
+        /* Tablet: 2-column layout */
+        @media (max-width: 1024px) {
+            main {
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+                gap: var(--space-md);
+            }
+
+            .bento-main {
+                grid-column: 1 / 3;
+                grid-row: 1 / 2;
+            }
+
+            .grid1 {
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+            }
+
+            .grid2 {
+                grid-column: 2 / 3;
+                grid-row: 2 / 3;
+            }
+
+            .grid3 {
+                grid-column: 1 / 2;
+                grid-row: 3 / 4;
+            }
+
+            .grid4 {
+                grid-column: 2 / 3;
+                grid-row: 3 / 4;
+            }
+
+            .grid5 {
+                grid-column: 1 / 3;
+                grid-row: 4 / 5;
+            }
+        }
+
+        /* Mobile: Single-column stack */
+        @media (max-width: 640px) {
+            main {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                padding: var(--space-md);
+                gap: var(--space-md);
+            }
+
+            .bento-main,
+            .grid1,
+            .grid2,
+            .grid3,
+            .grid4,
+            .grid5 {
+                grid-column: 1 / -1;
+                grid-row: auto;
+            }
+
+            .bento-main h1 {
+                font-size: 1.8rem;
+            }
+
+            .bento-main p {
+                font-size: 1rem;
+            }
+        }
+
+        /* ========================================
+           Accessibility
+           ======================================== */
+
+        /* Respect reduced motion preferences */
+        @media (prefers-reduced-motion: reduce) {
+            .bento-grid-block {
+                transition: none;
+            }
+
+            .bento-grid-block:hover {
+                transform: none;
+            }
+        }
+
+        /* High contrast mode support */
+        @media (prefers-contrast: more) {
+
+            .bento-grid-block,
+            .bento-main {
+                border-width: 3px;
+            }
+        }
+
+        /* Focus states for keyboard navigation */
+        .bento-grid-block:focus-visible,
+        .bento-main:focus-visible {
+            outline: 3px solid var(--color-teal);
+            outline-offset: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <!-- Small top-left block -->
+        <div class="bento-grid-block grid1" tabindex="0">
+            Grid 1
+        </div>
+
+        <!-- Hero/Feature block (2×2) -->
+        <div class="bento-main" tabindex="0">
+            <h1>Work Experience</h1>
+            <p>These are the places I've worked...</p>
+        </div>
+
+        <!-- Small top-right block -->
+        <div class="bento-grid-block grid2" tabindex="0">
+            Grid 2
+        </div>
+
+        <!-- Tall left block (spans 2 rows) -->
+        <div class="bento-grid-block grid3" tabindex="0">
+            Grid 3
+        </div>
+
+        <!-- Small middle-right block -->
+        <div class="bento-grid-block grid4" tabindex="0">
+            Grid 4
+        </div>
+
+        <!-- Wide bottom block (spans 3 columns) -->
+        <div class="bento-grid-block grid5" tabindex="0">
+            Grid 5
+        </div>
+    </main>
+</body>
+
+</html>
