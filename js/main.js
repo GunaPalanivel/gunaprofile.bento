@@ -36,11 +36,7 @@
   };
 
   /**
-<<<<<<< HEAD
-   * Initialize features (Task 2: Visual Excellence)
-=======
    * Initialize features (Task 2-3: Visual + Interactivity)
->>>>>>> feat/interactivity
    */
   const initFeatures = () => {
     try {
@@ -50,11 +46,6 @@
       if (CONFIG.features.gridInteractive) GridInteractive.init();
       if (CONFIG.features.smoothScroll) SmoothScroll.init();
       if (CONFIG.features.scrollAnimations) ScrollAnimations.init();
-<<<<<<< HEAD
-      MiscEffects.init(); // Always init (handles own feature checks)
-
-      console.log("✅ Visual excellence features initialized");
-=======
       MiscEffects.init();
 
       // Interactivity Layer (Task 3)
@@ -67,7 +58,6 @@
       if (CONFIG.features.analytics) Analytics.init();
       if (CONFIG.features.featureHints) FeatureHints.init();
       console.log("✅ All features initialized");
->>>>>>> feat/interactivity
     } catch (error) {
       console.error("❌ Feature initialization failed:", error);
     }
