@@ -9,7 +9,7 @@
  */
 
 (function initPortfolio() {
-  "use strict";
+  ("use strict");
 
   console.log(`
   ╔════════════════════════════════════════════════════════════════════════════╗
@@ -36,12 +36,19 @@
   };
 
   /**
-   * Initialize features (will be populated in later tasks)
+   * Initialize features (Task 2: Visual Excellence)
    */
   const initFeatures = () => {
     try {
-      // Feature initialization will go here in Tasks 2-6
-      console.log("✅ Features initialized (placeholder)");
+      // Visual Excellence Layer (Task 2)
+      if (CONFIG.features.cursor) CustomCursor.init();
+      if (CONFIG.features.particles) ParticleSystem.init();
+      if (CONFIG.features.gridInteractive) GridInteractive.init();
+      if (CONFIG.features.smoothScroll) SmoothScroll.init();
+      if (CONFIG.features.scrollAnimations) ScrollAnimations.init();
+      MiscEffects.init(); // Always init (handles own feature checks)
+
+      console.log("✅ Visual excellence features initialized");
     } catch (error) {
       console.error("❌ Feature initialization failed:", error);
     }
