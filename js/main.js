@@ -1,0 +1,90 @@
+/**
+ * Main Application Entry Point
+ *
+ * Orchestrates initialization of all features.
+ * Handles feature flag checking and error boundaries.
+ *
+ * @author Guna Palanivel
+ * @version 1.0.0
+ */
+
+(function initPortfolio() {
+  "use strict";
+
+  console.log(`
+  ╔════════════════════════════════════════════════════════════════════════════╗
+  ║   🚀 Portfolio Interactive v${CONFIG.env.version}                         ║ 
+  ║   Built by Guna Palanivel                                                  ║
+  ║   Build: ${CONFIG.env.buildDate}                                           ║
+  ╚════════════════════════════════════════════════════════════════════════════╝
+  `);
+
+  /**
+   * Initialize core systems
+   */
+  const initCore = () => {
+    try {
+      // Initialize performance monitoring
+      if (CONFIG.features.performance) {
+        PerformanceMonitor.init();
+      }
+
+      console.log("✅ Core systems initialized");
+    } catch (error) {
+      console.error("❌ Core initialization failed:", error);
+    }
+  };
+
+  /**
+   * Initialize features (will be populated in later tasks)
+   */
+  const initFeatures = () => {
+    try {
+      // Feature initialization will go here in Tasks 2-6
+      console.log("✅ Features initialized (placeholder)");
+    } catch (error) {
+      console.error("❌ Feature initialization failed:", error);
+    }
+  };
+
+  /**
+   * Setup global error handling
+   */
+  const setupErrorHandling = () => {
+    window.addEventListener("error", (event) => {
+      console.error("Global error:", event.error);
+      // Prevent default to avoid console spam
+      event.preventDefault();
+    });
+
+    window.addEventListener("unhandledrejection", (event) => {
+      console.error("Unhandled promise rejection:", event.reason);
+      event.preventDefault();
+    });
+  };
+
+  /**
+   * Main initialization
+   */
+  const init = () => {
+    // Wait for DOM to be ready
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", init);
+      return;
+    }
+
+    console.log("🎬 Initializing portfolio...");
+
+    setupErrorHandling();
+    initCore();
+    initFeatures();
+
+    console.log("✨ Portfolio fully loaded!");
+    console.log("💡 Tip: Check CONFIG object for feature flags");
+    console.log("💡 Tip: Use State.getAll() to inspect current state");
+    console.log("💡 Tip: Use EventBus.getHistory() to see event log");
+  };
+
+  // Start initialization
+  init();
+})();
