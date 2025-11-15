@@ -63,6 +63,10 @@ const MiscEffects = (() => {
    */
   const handleSkillBadgeClick = (e) => {
     const badge = e.currentTarget;
+<<<<<<< HEAD
+=======
+    const skill = badge.textContent.trim();
+>>>>>>> feat/interactivity
 
     // Add ripple class
     badge.classList.add("ripple");
@@ -72,10 +76,42 @@ const MiscEffects = (() => {
       badge.classList.remove("ripple");
     }, 600);
 
+<<<<<<< HEAD
     // Emit event (could show proficiency modal in future)
     EventBus.emit("skill:click", {
       skill: badge.textContent.trim(),
     });
+=======
+    // Show proficiency
+    showSkillProficiency(skill);
+
+    // Emit event
+    EventBus.emit("skill:click", { skill });
+  };
+
+  /**
+   * Show skill proficiency (future: could be modal)
+   */
+  const showSkillProficiency = (skill) => {
+    // For now, just log (future: show modal with details)
+    console.log(`💡 Skill: ${skill}`);
+    console.log(`   (Future: Show proficiency, projects, certifications)`);
+
+    // Could show toast with proficiency level
+    const proficiency = {
+      JavaScript: "Expert",
+      "Node.js": "Advanced",
+      TypeScript: "Advanced",
+      React: "Advanced",
+      "REST APIs": "Expert",
+      Microservices: "Advanced",
+    };
+
+    if (proficiency[skill]) {
+      // Simple console log for now
+      console.log(`   Proficiency: ${proficiency[skill]}`);
+    }
+>>>>>>> feat/interactivity
   };
 
   /**
