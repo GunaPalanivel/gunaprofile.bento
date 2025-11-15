@@ -54,9 +54,11 @@
       ContactEffects.init();
       ProjectsEffects.init();
       WorkEffects.init();
-      FeatureHints.init();
       if (CONFIG.features.analytics) Analytics.init();
-      if (CONFIG.features.featureHints) FeatureHints.init();
+
+      // Feature Discovery
+      FeatureHints.init();
+
       console.log("✅ All features initialized");
     } catch (error) {
       console.error("❌ Feature initialization failed:", error);
